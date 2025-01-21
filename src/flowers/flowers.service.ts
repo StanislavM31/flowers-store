@@ -18,6 +18,11 @@ export class FlowersService {
                 name: 'tulip',
                 color: 'yellow',
                 price: 7
+              },
+              {
+                name: 'camomille',
+                color: 'blue',
+                price: 12
               }
         ]
     }

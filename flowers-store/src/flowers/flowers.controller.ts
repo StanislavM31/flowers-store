@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { FlowersService } from './flowers.service';
+import { ParseIntPipe } from 'src/conception/pipe';
 
 @Controller('flowers')
 export class FlowersController {
@@ -8,5 +9,9 @@ export class FlowersController {
   @Get()
   findAll(){
     return this.flowersService.findAll();
+  }
+  checkInt(@Query('pageNumber', ParseIntPipe) pageNumber:number){
+    console.log(pageNumber);
+    return this.flowersService.findAll()
   }
 }

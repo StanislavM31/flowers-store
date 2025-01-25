@@ -1,4 +1,5 @@
-import { Controller, Get, Query, UseGuards } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
+import { UseGuards } from '@nestjs/common';
 import { FlowersService } from './flowers.service';
 import { ParseIntPipe } from 'src/conception/pipe';
 import { AuthGuard } from 'src/conception/guard';
@@ -7,13 +8,23 @@ import { AuthGuard } from 'src/conception/guard';
 export class FlowersController {
   constructor(private readonly flowersService: FlowersService) {}
 
-  @Get()
-  @UseGuards(new AuthGuard())
-  findAll(){
+  @Get('auth')
+  @UseGuards(AuthGuard)
+  auth() {
     return this.flowersService.findAll();
   }
-  checkInt(@Query('pageNumber', ParseIntPipe) pageNumber:number){
+  @Get('item')
+  checkInt(@Query('itemNumber', ParseIntPipe) pageNumber: number) {
     console.log(pageNumber);
-    return this.flowersService.findAll()
+    return this.flowersService.findAll();
   }
+  @Get()
+  findAll() {
+    return this.flowersService.findAll();
+  }
+  @Get('first')
+  getFirstNumber() {
+    return this.flowersService.getFirstFlower();
+  }
+
 }

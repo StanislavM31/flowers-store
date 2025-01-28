@@ -36,4 +36,7 @@ export class FlowersService {
   getFlowerByIndex(index: number) {
     return this.flowers[index];
   }
+  getAuthItem(index: number){
+    return this.flowers[index];
+  }
 }

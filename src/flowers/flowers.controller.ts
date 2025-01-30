@@ -22,10 +22,10 @@ export class FlowersController {
     console.log('Flower retrieved:', flower);
     return flower;
   }
-  @Get()
+/*   @Get()
   findAll() {
     return this.flowersService.findAll();
-  }
+  } */
   @Get('first')
   getFirstNumber() {
     return this.flowersService.getFirstFlower();
@@ -35,6 +35,12 @@ export class FlowersController {
     return this.flowersService.getAuthItem(item);
   }
 
+  @Get()
+  @UsePipes(new ValidationPipe())
+  @UseGuards(AuthGuard)
+  getAllFromDB() {
+    return this.flowersService.getAllFromDB();
+  }
 
   @Post()
   @UsePipes(new ValidationPipe())

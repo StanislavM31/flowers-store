@@ -19,3 +19,5 @@ yarn prisma db pull (if no bd error-its ok)
 yarn prisma generate клиентский код на основе схемы данных
 yarn prisma db push (база готова)
 create file prisma.service.ts
+
+yarn add @nestjs/config

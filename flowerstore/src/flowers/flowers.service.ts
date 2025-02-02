@@ -49,7 +49,7 @@ export class FlowersService {
     } */
   
     getFirstFlower() {
-      console.log('qwertyuiop[]asdfghjkl');
+      console.log('getFirstFlower()...');
       return this.flowers[0];
     }
   
@@ -60,7 +60,7 @@ export class FlowersService {
       return this.flowers[index];
     }
     getAllFromDB():Promise<Flower[]>{
-      console.log('qwertyuiop[]asdfghjkl');
+      console.log('getAllFromDB()...');
       
       console.log(this.configService.get<EnumAppMode>('MODE'));
       return this.prisma.flower.findMany();

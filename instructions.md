@@ -21,3 +21,4 @@ yarn prisma db push (база готова)
 create file prisma.service.ts
 
 yarn add @nestjs/config
+DATABASE_URL="postgresql://postgres:****@localhost:5432/flowersDB1?schema=public"

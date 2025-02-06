@@ -15,6 +15,8 @@ Request -> Middleware -> Guards -> Pipes -> Controller -> Interceptors -> Respon
 yarn add prisma
 yarn prisma init
 *edit .env
+DATABASE_URL="postgresql://postgres:****@localhost:5432/FlowersDB11?schema=public"
+MODE="development" - for console.log mode
 yarn prisma db pull (if no bd error-its ok)
 yarn prisma generate клиентский код на основе схемы данных
 yarn prisma db push (база готова)
